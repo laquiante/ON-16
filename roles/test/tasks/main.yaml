@@ -1,7 +1,7 @@
 - name: Kopieren
   template:
     src: "nvue.j2"
-    dest: /etc/nvue.d/test.yaml
+    dest: /etc/test.yaml
     owner: nvue
     group: nvue
     mode: 0644
