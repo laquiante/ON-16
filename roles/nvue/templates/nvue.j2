@@ -2,6 +2,6 @@
     platform:
       hostname:
         value: {{ inventory_hostname }}
-{% if vlans is defined %}
+#{% if vlans is defined %}
 {%   include './features/vlans.j2' %}
-{% endif %}
+#{% endif %}
