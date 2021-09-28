@@ -2,6 +2,9 @@
     platform:
       hostname:
         value: {{ inventory_hostname }}
-#{% if vlans is defined %}
-{%   include './features/vlans.j2' %}
-#{% endif %}
+    bridge:
+      domain:
+        br_default:
+          type: vlan-aware
+          vlan:10
+
