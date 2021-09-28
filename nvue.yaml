@@ -1,0 +1,9 @@
+---
+- hosts: leaf01
+  become: true
+  user: cumulus
+  gather_facts: false
+  roles:
+    - {role: nvue }
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
