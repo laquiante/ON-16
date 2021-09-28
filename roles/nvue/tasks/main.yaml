@@ -1,0 +1,7 @@
+- name: Drop the nvue yaml
+  template:
+    src: "nvue.j2"
+    dest: /etc/test.yaml
+    owner: nvue
+    group: nvue
+    mode: 0644
