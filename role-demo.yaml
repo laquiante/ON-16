@@ -1,0 +1,7 @@
+---
+- hosts: leaf01
+  user: cumulus
+  become: yes
+  become_method: sudo
+  roles:
+    - vlan
