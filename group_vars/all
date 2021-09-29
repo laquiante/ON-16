@@ -3,12 +3,12 @@ vlans:
   "42"
   
 vlan2:
-  leaf01:
-    test1:
-      "100 101
-  leaf02:
-    test1:
-      "101 102"
+    leaf01:
+        test1:
+          "100 101
+    leaf02:
+        test1:
+          "101 102"
 
 interfaces:
     leaf01:
