@@ -1,3 +1,11 @@
 # test
 vlans:
   "42"
+
+interfaces:
+    leaf01:
+        vlans:
+          "43"
+    leaf02:
+        vlans:
+          "44"
