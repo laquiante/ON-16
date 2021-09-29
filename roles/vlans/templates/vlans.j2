@@ -7,4 +7,4 @@ iface bridge
         bridge-vlan-aware yes {{vlans}}
         test {{ device_vars.vlans }}
         test2 {{test_vars.test1 }}
-        test3 {{vlans}}{{device_vars.vlans}}{{test_vars.test1}}
+        test3 {{vlans}} {{device_vars.vlans}} {{test_vars.test1}}
