@@ -1,4 +1,0 @@
----
-- hosts: leaf01
-  vars:
-    vlans: '42'
