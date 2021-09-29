@@ -1,6 +1,5 @@
 {% set device_vars = interfaces[ansible_hostname] %}
 {% set test_vars = vlan2[ansible_hostname] %}
-{% set tv = {{vlans}}+{{device_vars.vlans}} %}
 auto bridge
 iface bridge
         bridge-ports {{device_vars.if}}
@@ -8,4 +7,4 @@ iface bridge
         bridge-vlan-aware yes {{vlans}}
         test {{ device_vars.vlans }}
         test2 {{test_vars.test1 }}
-        test3 {{tv}}
+        test3 {{device_vars.vlan}}{{test_vars.test1}}
