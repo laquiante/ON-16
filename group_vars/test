@@ -1,5 +1,5 @@
 ---
-vlan2:
+vlan:
     leaf01:
       test1:
         "100 101"
