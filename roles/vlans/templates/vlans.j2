@@ -1,5 +1,7 @@
+{% set intvars = interfaces[ansible_hostname] %}
 auto bridge
 iface bridge
         bridge-ports hpcbond vxlan10 l3_vni
         bridge-vids 
         bridge-vlan-aware yes {{vlans}}
+        test {{ intvars.test }}
