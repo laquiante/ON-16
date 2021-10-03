@@ -1,0 +1,23 @@
+# test
+vlans:
+  "42"
+  
+vlan2:
+    leaf01:
+        test1:
+          "100 101"
+    leaf02:
+        test1:
+          "101 102"
+
+interfaces:
+    leaf01:
+        vlans:
+          "43"
+        if:
+          "swp1 swp2 swp3"
+    leaf02:
+        vlans:
+          "44"
+        if:
+          "swp11 swp22 swp33"
