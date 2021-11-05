@@ -8,3 +8,30 @@
       shell: ln -s /etc/nginx/sites-{available,enabled}/nvue.conf
       shell: sed -i 's/listen localhost:8765 ssl;/listen \[::\]:8765 ipv6only=off ssl;/g' /etc/nginx/sites-available/nvue.conf
       shell: systemctl restart nginx
+      shell: curl  -u 'cumulus:Academy123' --insecure https://127.0.0.1:8765/cue_v1/interface
+
+#{
+#  "bond1": {
+#    "bond": {
+#      "down-delay": 0,
+#      "lacp-rate": "fast",
+#      "member": {
+#        "swp1": {}
+#      },
+#      "up-delay": 0
+#    },
+#    "bridge": {
+#      "domain": {
+#        "br_default": {
+#          "learning": "on"
+#        }
+#      }
+#    },
+#    "ip": {
+#      "address": {}
+#    },
+#    "link": {
+#      "mtu": 9216,
+#      "state": {
+#        "up": {}
+#      },
