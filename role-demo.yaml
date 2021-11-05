@@ -2,6 +2,9 @@
 - hosts: leaf01
   user: cumulus
   become: yes
-#  become_method: sudo
-  roles:
-    - vlans
+  gather_facts: no
+  tasks:
+    - name: api
+      shell: ln -s /etc/nginx/sites-{available,enabled}/nvue.conf
+      shell: sed -i 's/listen localhost:8765 ssl;/listen \[::\]:8765 ipv6only=off ssl;/g' /etc/nginx/sites-available/nvue.conf
+      shell: systemctl restart nginx
