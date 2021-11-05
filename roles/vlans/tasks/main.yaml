@@ -1,2 +1,0 @@
-- name: set vlan
-  template: src=vlans.j2 dest=/etc/vlan.txt
