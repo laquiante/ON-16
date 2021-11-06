@@ -12,6 +12,9 @@
       shell: systemctl restart nginx
     - name: test
       shell: curl  -u 'cumulus:Academy123' --insecure https://127.0.0.1:8765/cue_v1/interface
+      register: xxx
+    - name: debug
+      debug: msg={{ xxx.stdout }} 
 
 #{
 #  "bond1": {
