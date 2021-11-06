@@ -16,8 +16,9 @@
     - name: debug
       debug: msg={{ xxx.stdout }} 
     - name: test mh
-      shell: curl -u 'cumulus:Academy123' --insecure -X 'GET' 'https://127.0.0.1:8765/nvue_v1/evpn/multihoming?rev=operational' -H 'accept: application/json'
+      shell: curl -u 'cumulus:Academy123' --insecure -X 'GET' 'https://127.0.0.1:8765/nvue_v1/evpn/multihoming?rev=operational'
       # -u 'root:root' --insecure https://localhost:8765/dns_v1/native/nameserver
+      #       shell: curl -u 'cumulus:Academy123' --insecure -X 'GET' 'https://127.0.0.1:8765/nvue_v1/evpn/multihoming?rev=operational' -H 'accept: application/json'
       register: xxx
     - name: debug
       debug: msg={{ xxx.stdout }} 
