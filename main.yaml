@@ -6,22 +6,36 @@
   tasks:
     - name: api
       shell: ln -s /etc/nginx/sites-{available,enabled}/nvue.conf
+      tags:
+      - start
     - name: api prepare
       shell: sed -i 's/listen localhost:8765 ssl;/listen \[::\]:8765 ipv6only=off ssl;/g' /etc/nginx/sites-available/nvue.conf
+      tags:
+      - start
     - name: nginx restart
       shell: systemctl restart nginx
+      tags:
+      - start
     - name: test
       shell: curl  -u 'cumulus:Academy123' --insecure https://127.0.0.1:8765/cue_v1/interface
       register: xxx
+      tags:
+      - test
     - name: debug
-      debug: msg={{ xxx.stdout }} 
+      debug: msg={{ xxx.stdout }}
+      tags:
+      - test
     - name: test mh
       shell: curl -u 'cumulus:Academy123' --insecure -X 'GET' 'https://127.0.0.1:8765/nvue_v1/evpn/multihoming?rev=operational'
       # -u 'root:root' --insecure https://localhost:8765/dns_v1/native/nameserver
       #       shell: curl -u 'cumulus:Academy123' --insecure -X 'GET' 'https://127.0.0.1:8765/nvue_v1/evpn/multihoming?rev=operational' -H 'accept: application/json'
       register: xxx
+      tags:
+      - test
     - name: debug
       debug: msg={{ xxx.stdout }} 
+      tags:
+      - test
 #{
 #  "bond1": {
 #    "bond": {
