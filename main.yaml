@@ -16,7 +16,7 @@
     - name: debug
       debug: msg={{ xxx.stdout }} 
     - name: test mh
-      shell: curl -X 'GET' \ 'https://docs.nvidia.com/nvue_v1/evpn/multihoming?rev=operational' \ -H 'accept: application/json'
+      shell: curl -X 'GET' 'https://127.0.0.1:8765/nvue_v1/evpn/multihoming?rev=operational' -H 'accept: application/json'
       register: xxx
     - name: debug
       debug: msg={{ xxx.stdout }} 
