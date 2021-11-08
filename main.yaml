@@ -17,6 +17,7 @@
       tags:
       - start
     - name: test
+    # vom oob curl  -u 'cumulus:Academy123' --insecure https://192.168.200.9:8765/cue_v1/interface OK
       shell: curl  -u 'cumulus:Academy123' --insecure https://127.0.0.1:8765/cue_v1/interface
       register: xxx
       tags:
